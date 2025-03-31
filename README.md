@@ -90,7 +90,7 @@ Once the application is running, http://localhost:5000 should open.
 
 ⚖ License
 
-This project is licensed under the proprietary license. See the LICENSE file for details.
+This project is licensed under a proprietary license. See the LICENSE file for details.
 
 
 🤝 Contributing
