@@ -17,10 +17,10 @@ It calculates population circles based on employee data and displays them dynami
 
 🖥️ Languages
 
-  		- C#	82.3%
-   		- HTML	13.8%
-    	- CSS	3.3%
-     	- JS	0.6%
+- C#	82.3%
+- HTML	13.8%
+- CSS	3.3%
+- JS	0.6%
 
 
 🔧 Technologies
