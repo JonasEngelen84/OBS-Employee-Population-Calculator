@@ -19,7 +19,8 @@ obj/
 *.DotSettings*
 
 # Secrets & Config
-appsettings.OBS.Configuration.json
+appsettings.json
+appsettings.Development.json
 secrets.json
 
 # Logs
@@ -39,4 +40,4 @@ secrets/
 *.key
 *.pem
 *.pfx
-*.json
+appsettings.OBS.Configuration.json
