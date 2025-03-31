@@ -1,6 +1,6 @@
 ﻿PROPRIETARY LICENSE
 
-Copyright (c) [2025] [Jonas Engelen / OBS GmbH]
+Copyright (c) 2025 Jonas Engelen / OBS GmbH
 
 All rights reserved.
 
@@ -16,7 +16,7 @@ The Software is provided "as is," without warranty of any kind.
 
 Limited Use
 Any use beyond personal or internal review—including commercial use,
-redistribution, or modification—requires prior written approval from [YOUR NAME / COMPANY].
+redistribution, or modification—requires prior written approval from Jonas Engelen.
 
 Enforcement
 Unauthorized use of this Software may result in legal action.
