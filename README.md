@@ -9,30 +9,30 @@ It calculates population circles based on employee data and displays them dynami
 
 🔍 Features
 
-	OpenStreetMap integration with Leaflet.js
-	Dynamic company location display
-	Employee distribution visualization using population circles
-	Configurable properties via appsettings.json
+	- OpenStreetMap integration with Leaflet.js
+	- Dynamic company location display
+	- Employee distribution visualization using population circles
+	- Configurable properties via appsettings.json
 	
 
 🔧 Technologies
 
-	.NET Core
-	ASP.NET Razor Pages
-	Leaflet.js
-	Geolocation
-	IdentityModel
-	Nominatim
-	System.Linq.Dynamic.Core
+	- .NET Core
+	- ASP.NET Razor Pages
+	- Leaflet.js
+	- Geolocation
+	- IdentityModel
+	- Nominatim
+	- System.Linq.Dynamic.Core
 	
 	
 🔼 Installation
 
 Prerequisites:
 
-	.NET SDK installed
-	Node.js (optional, if client-side dependencies are required)
-	Git (if cloning from GitHub)
+	- .NET SDK installed
+	- Node.js (optional, if client-side dependencies are required)
+	- Git (if cloning from GitHub)
 
 Setup Instructions:
 
@@ -75,9 +75,9 @@ Once the application is running, http://localhost:5000 should open.
 
 🔒 Security Considerations
 
-	Never commit sensitive data to the repository.
-	Use .gitignore to exclude configuration files containing secrets.
-	Regularly rotate API keys and credentials.
+	- Never commit sensitive data to the repository.
+	- Use .gitignore to exclude configuration files containing secrets.
+	- Regularly rotate API keys and credentials.
 
 
 ⚖ License
