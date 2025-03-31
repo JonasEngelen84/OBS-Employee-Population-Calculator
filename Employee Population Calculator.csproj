@@ -21,6 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="appsettings.OBS.Configuration.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="D:\Programmierung\Visual Studio\Projekte\Employee Distance Calculator\.editorconfig" />
   </ItemGroup>
 

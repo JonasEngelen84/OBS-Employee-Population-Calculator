@@ -8,13 +8,13 @@ namespace OBS.Dashboard.Map.Services
 {
     public class EmployeeObsStammAddressesProvider : IEmployeeAddressesProvider
     {
-        private readonly IPersonsApi api;
+        private readonly IPersonsApi _api;
         private List<string> _employeeAddressesCache = null;
         private DateTime _lastCalculationTime = DateTime.Now;
 
         public EmployeeObsStammAddressesProvider(IPersonsApi api)
         {
-            this.api = api;
+            _api = api;
         }
 
         public List<string> EmployeesAddresses
@@ -37,16 +37,13 @@ namespace OBS.Dashboard.Map.Services
 
             try
             {   
-                foreach (var descriptor in api.Descriptors())
+                foreach (var descriptor in _api.Descriptors())
                 {
-                    DetailedPersonApiModel apiDetails = api.Details(descriptor.Id);
+                    DetailedPersonApiModel apiDetails = _api.Details(descriptor.Id);
 
-                    string streetAndHouseNumber = apiDetails.StreetAndHouseNumber;
-                    string postalCode = apiDetails.PostalCode;
-                    string cityAndCountry = apiDetails.CityAndCountry;
-                    string fullAddress = streetAndHouseNumber + " " + postalCode + " " + cityAndCountry;
+                    string address = apiDetails.StreetAndHouseNumber + " " + apiDetails.PostalCode + " " + apiDetails.CityAndCountry;
                     
-                    employeeDetails.Add(fullAddress);
+                    employeeDetails.Add(address);
                 }
             }
             catch (Exception ex)
