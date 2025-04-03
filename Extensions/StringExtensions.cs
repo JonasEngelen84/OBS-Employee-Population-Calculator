@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 
-namespace OBS.Dashboard.Exporter.Extensions
+namespace Employee_Population_Calculator.Extensions
 {
     /// <summary>
     /// Static extension class that deals with custom String manipulation.

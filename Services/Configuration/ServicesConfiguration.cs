@@ -1,4 +1,4 @@
-﻿namespace OBS.Dashboard.Exporter.Configuration
+﻿namespace Employee_Population_Calculator.Configuration
 {
     // Klasse zur Deklaration der ServiceConfiguration Instanzen.
     public class ServicesConfiguration

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OBS.Dashboard.Map.Services.Configuration
+namespace Employee_Population_Calculator.Services.Configuration
 {
     // Klasse zur Bereitstellung der benötigten Informationen für OAuth 2
     public class AuthenticationConfiguration

@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using Employee_Population_Calculator.Services.API;
 using Microsoft.Extensions.Configuration;
-using OBS.Dashboard.Map.Services.API;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace OBS.Dashboard.Map.Services.Configuration
+namespace Employee_Population_Calculator.Services.Configuration
 {
     public class ConfigurationEmployeeAddressesProvider : IEmployeeAddressesProvider
     {

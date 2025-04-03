@@ -1,6 +1,7 @@
 ﻿# Visual Studio & .NET build artifacts
 bin/
 obj/
+.vs/
 *.user
 *.suo
 *.vsp
@@ -41,5 +42,4 @@ secrets/
 *.pem
 *.pfx
 appsettings.OBS.Configuration.json
-/NuGet.Config
 /NuGet.Config

@@ -1,4 +1,4 @@
-﻿namespace OBS.Dashboard.Map.Models
+﻿namespace Employee_Population_Calculator.Models
 {
     public enum EmployeeAddressesSource
     {

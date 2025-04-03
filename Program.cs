@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace OBS.Dashboard.Map
+namespace Employee_Population_Calculator
 {
     public class Program
     {

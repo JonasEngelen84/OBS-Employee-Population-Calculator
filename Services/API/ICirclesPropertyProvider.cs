@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using OBS.Dashboard.Map.Models;
+﻿using Employee_Population_Calculator.Models;
+using System.Collections.Generic;
 
-namespace OBS.Dashboard.Map.Services.API
+namespace Employee_Population_Calculator.Services.API
 {
     public interface ICirclesPropertyProvider
     {

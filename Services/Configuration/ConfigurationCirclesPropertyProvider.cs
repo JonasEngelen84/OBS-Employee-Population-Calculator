@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.Configuration;
-using OBS.Dashboard.Map.Models;
-using OBS.Dashboard.Map.Services.API;
+﻿using Employee_Population_Calculator.Models;
+using Employee_Population_Calculator.Services.API;
+using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OBS.Dashboard.Map.Services.Configuration
+namespace Employee_Population_Calculator.Services.Configuration
 {
     public class ConfigurationCirclesPropertyProvider : ICirclesPropertyProvider
     {

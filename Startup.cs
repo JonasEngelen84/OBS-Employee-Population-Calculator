@@ -1,21 +1,21 @@
-using System.IO;
-using System.Net.Http;
+using Employee_Population_Calculator.Configuration;
+using Employee_Population_Calculator.Extensions;
+using Employee_Population_Calculator.Models;
+using Employee_Population_Calculator.Services;
+using Employee_Population_Calculator.Services.API;
+using Employee_Population_Calculator.Services.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
-using OBS.Dashboard.Exporter.Configuration;
-using OBS.Dashboard.Exporter.Extensions;
-using OBS.Dashboard.Map.Models;
 using OBS.Dashboard.Map.Services;
-using OBS.Dashboard.Map.Services.API;
-using OBS.Dashboard.Map.Services.Configuration;
 using OBS.Stamm.Client.Api;
+using System.Net.Http;
 using AuthenticationService = OBS.Dashboard.Map.Services.AuthenticationService;
 
-namespace OBS.Dashboard.Map
+namespace Employee_Population_Calculator
 {
     /// <summary>
     /// Konfiguriert die Webanwendung und deren Services.
@@ -79,8 +79,8 @@ namespace OBS.Dashboard.Map
                 // Authentifizierung über AccessToken
                 var authenticationService = provider.GetRequiredService<AuthenticationService>();
                 var accessToken = authenticationService.GetAccessTokenAsync(default).Result;
-                personsApi.Configuration = Stamm.Client.Client.Configuration.MergeConfigurations(
-                    new Stamm.Client.Client.Configuration()
+                personsApi.Configuration = OBS.Stamm.Client.Client.Configuration.MergeConfigurations(
+                    new OBS.Stamm.Client.Client.Configuration()
                     {
                         AccessToken = accessToken
                     },

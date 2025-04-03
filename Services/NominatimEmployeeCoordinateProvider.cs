@@ -1,7 +1,6 @@
-﻿using Geolocation;
+﻿using Employee_Population_Calculator.Services.API;
+using Geolocation;
 using Microsoft.Extensions.Logging;
-using Nominatim.API.Geocoders;
-using OBS.Dashboard.Map.Services.API;
 using System;
 using System.Collections.Generic;
 

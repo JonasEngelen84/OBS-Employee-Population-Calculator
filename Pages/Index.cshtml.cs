@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
+﻿using Employee_Population_Calculator.Models;
+using Employee_Population_Calculator.Services.API;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using OBS.Dashboard.Map.Models;
-using OBS.Dashboard.Map.Services.API;
+using System.Collections.Generic;
+using System.Globalization;
 
 //C# basierter Code mit Bezug auf den HTML Code
-namespace OBS.Dashboard.Map.Pages
+namespace Employee_Population_Calculator.Pages
 {
     //Beeinhaltet die Daten für die Index-Seite
     public partial class IndexModel : PageModel

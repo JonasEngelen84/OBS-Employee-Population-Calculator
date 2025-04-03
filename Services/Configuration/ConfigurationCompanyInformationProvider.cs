@@ -1,8 +1,8 @@
-﻿using Geolocation;
+﻿using Employee_Population_Calculator.Services.API;
+using Geolocation;
 using Microsoft.Extensions.Configuration;
-using OBS.Dashboard.Map.Services.API;
 
-namespace OBS.Dashboard.Map.Services.Configuration
+namespace Employee_Population_Calculator.Services.Configuration
 {
     public class ConfigurationCompanyInformationProvider : ICompanyInformationProvider
     {   

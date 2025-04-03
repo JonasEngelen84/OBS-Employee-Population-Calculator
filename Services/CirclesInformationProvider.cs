@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Employee_Population_Calculator.Models;
+using Employee_Population_Calculator.Services.API;
+using Geolocation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Geolocation;
-using OBS.Dashboard.Map.Models;
-using OBS.Dashboard.Map.Services.API;
 
-namespace OBS.Dashboard.Map.Services
+namespace Employee_Population_Calculator.Services
 {
     public class CirclesInformationProvider : ICirclesInformationProvider
     {

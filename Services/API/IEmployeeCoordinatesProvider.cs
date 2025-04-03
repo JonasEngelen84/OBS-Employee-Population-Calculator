@@ -1,7 +1,7 @@
 ﻿using Geolocation;
 using System.Collections.Generic;
 
-namespace OBS.Dashboard.Map.Services.API
+namespace Employee_Population_Calculator.Services.API
 {
     public interface IEmployeeCoordinatesProvider
     {

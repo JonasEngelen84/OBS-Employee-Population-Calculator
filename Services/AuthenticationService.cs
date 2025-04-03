@@ -1,9 +1,9 @@
-﻿using IdentityModel.Client;
+﻿using Employee_Population_Calculator.Configuration;
+using Employee_Population_Calculator.Extensions;
+using Employee_Population_Calculator.Services.Configuration;
+using IdentityModel.Client;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using OBS.Dashboard.Exporter.Configuration;
-using OBS.Dashboard.Exporter.Extensions;
-using OBS.Dashboard.Map.Services.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Security.Authentication;

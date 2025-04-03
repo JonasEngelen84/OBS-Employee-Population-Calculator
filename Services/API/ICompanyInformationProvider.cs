@@ -1,6 +1,6 @@
 ﻿using Geolocation;
 
-namespace OBS.Dashboard.Map.Services.API
+namespace Employee_Population_Calculator.Services.API
 {
     public interface ICompanyInformationProvider
     {   
