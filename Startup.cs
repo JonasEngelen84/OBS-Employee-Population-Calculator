@@ -22,20 +22,6 @@ namespace Employee_Population_Calculator
     /// </summary>
     public class Startup
     {
-        /// <summary>
-        /// IConfiguration wird verwendet, um Konfigurationsdaten
-        /// aus verschiedenen Quellen zu laden, z. B.:
-        ///     appsettings.json
-        ///     Umgebungsvariablen
-        ///     Kommandozeilenargumente
-        ///     Geheimspeicher (Secrets Manager)
-        /// </summary>
-        public IConfiguration Configuration { get; }
-        
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
 
         /// <summary>
         /// ConfigureServices registriert die Services der Anwendung.
@@ -43,6 +29,12 @@ namespace Employee_Population_Calculator
         /// <param name="services">Service Collection für Dependency Injection</param>
         public void ConfigureServices(IServiceCollection services)
         {
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile("appsettings.OBS.Configuration.json", optional: true, reloadOnChange: true)
+                .AddEnvironmentVariables()
+                .Build();
+
             services.AddRazorPages();
 
             services.AddTransient<ICompanyInformationProvider, ConfigurationCompanyInformationProvider>();
@@ -55,8 +47,8 @@ namespace Employee_Population_Calculator
             services.AddTransient<AuthenticationService>();
 
             // Laden der Konfigurationen aus appsettings.json
-            services.Configure<ServicesConfiguration>(Configuration.GetSection("Services"));
-            services.Configure<AuthenticationConfiguration>(Configuration.GetSection("Authentication"));
+            services.Configure<ServicesConfiguration>(configuration.GetSection("Services"));
+            services.Configure<AuthenticationConfiguration>(configuration.GetSection("Authentication"));
 
             /// <summary>
             /// Registriert die `IPersonsApi`-Implementierung als Transienten Dienst.
@@ -90,7 +82,7 @@ namespace Employee_Population_Calculator
             });
 
             // Konfiguration des EmployeeCoordinatesProvider basierend auf appsettings.json
-            if (Configuration.GetValue<CoordinateSource>("CoordinateSource") == CoordinateSource.Nominatim)
+            if (configuration.GetValue<CoordinateSource>("CoordinateSource") == CoordinateSource.Nominatim)
             {
                 // Nominatim
                 services.AddTransient<IEmployeeCoordinatesProvider, NominatimEmployeeCoordinateProvider>();
@@ -102,7 +94,7 @@ namespace Employee_Population_Calculator
             }
 
             // Konfiguration des EmployeeAddressesProvider basierend auf appsettings.json
-            if (Configuration.GetValue<EmployeeAddressesSource>("EmployeeAddressesSource") == EmployeeAddressesSource.OBSStamm)
+            if (configuration.GetValue<EmployeeAddressesSource>("EmployeeAddressesSource") == EmployeeAddressesSource.OBSStamm)
             {
                 // OBSStamm
                 services.AddTransient<IEmployeeAddressesProvider, EmployeeObsStammAddressesProvider>();
