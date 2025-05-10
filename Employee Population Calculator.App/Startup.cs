@@ -52,7 +52,6 @@ namespace Employee_Population_Calculator.App
             /// Diese API ermöglicht den Zugriff auf die Personen-Daten aus dem OBS-Stamm-System.
             /// </summary>
             /// <remarks>
-            /// - `AddTransient<IPersonsApi>` bedeutet, dass bei jeder Anforderung eine neue Instanz von `PersonsApi` erstellt wird.
             /// - Die `PersonsApi`-Instanz wird mit der `StammServiceUrl` aus der Konfiguration initialisiert.
             /// - Falls `StammServiceUrl` nicht gesetzt ist, wird eine alternative URL basierend auf `ServiceTemplateUrl` generiert.
             /// - Die Authentifizierung erfolgt über ein Access Token, das über den `AuthenticationService` geholt wird.
