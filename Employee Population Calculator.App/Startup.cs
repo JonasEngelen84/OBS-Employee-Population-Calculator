@@ -1,28 +1,25 @@
-using Employee_Population_Calculator.Configuration;
-using Employee_Population_Calculator.Extensions;
-using Employee_Population_Calculator.Models;
-using Employee_Population_Calculator.Services;
-using Employee_Population_Calculator.Services.API;
-using Employee_Population_Calculator.Services.Configuration;
+using Employee_Population_Calculator.App.Extensions;
+using Employee_Population_Calculator.App.Models;
+using Employee_Population_Calculator.App.Services;
+using Employee_Population_Calculator.App.Services.API;
+using Employee_Population_Calculator.App.Services.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
-using OBS.Dashboard.Map.Services;
 using OBS.Stamm.Client.Api;
 using System.Net.Http;
-using AuthenticationService = OBS.Dashboard.Map.Services.AuthenticationService;
+using AuthenticationService = Employee_Population_Calculator.App.Services.AuthenticationService;
 
-namespace Employee_Population_Calculator
+namespace Employee_Population_Calculator.App
 {
     /// <summary>
     /// Konfiguriert die Webanwendung und deren Services.
     /// </summary>
     public class Startup
     {
-
         /// <summary>
         /// ConfigureServices registriert die Services der Anwendung.
         /// </summary>

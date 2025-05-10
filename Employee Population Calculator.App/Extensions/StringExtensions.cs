@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 
-namespace Employee_Population_Calculator.Extensions
+namespace Employee_Population_Calculator.App.Extensions
 {
     /// <summary>
     /// Static extension class that deals with custom String manipulation.

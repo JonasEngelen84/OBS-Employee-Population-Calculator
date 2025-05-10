@@ -1,7 +1,7 @@
 ﻿using Geolocation;
 using System.Collections.Generic;
 
-namespace Employee_Population_Calculator.Services.API
+namespace Employee_Population_Calculator.App.Services.API
 {
     public interface IEmployeeCoordinatesProvider
     {

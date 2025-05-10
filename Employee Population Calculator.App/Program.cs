@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Employee_Population_Calculator
+namespace Employee_Population_Calculator.App
 {
     public class Program
     {

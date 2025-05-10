@@ -1,6 +1,5 @@
-﻿using Employee_Population_Calculator.Configuration;
-using Employee_Population_Calculator.Extensions;
-using Employee_Population_Calculator.Services.Configuration;
+﻿using Employee_Population_Calculator.App.Extensions;
+using Employee_Population_Calculator.App.Services.Configuration;
 using IdentityModel.Client;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -10,7 +9,7 @@ using System.Security.Authentication;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace OBS.Dashboard.Map.Services
+namespace Employee_Population_Calculator.App.Services
 {
     public class AuthenticationService
     {

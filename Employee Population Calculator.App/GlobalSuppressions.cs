@@ -5,4 +5,5 @@
 
 using System.Diagnostics.CodeAnalysis;
 
+//TODO: unnötige unterdrückung???
 [assembly: SuppressMessage("Design", "ASP0000:Do not call 'IServiceCollection.BuildServiceProvider' in 'ConfigureServices'", Justification = "<Ausstehend>", Scope = "member", Target = "~M:OBS.Dashboard.Map.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)")]

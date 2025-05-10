@@ -1,4 +1,4 @@
-﻿namespace Employee_Population_Calculator.Models
+﻿namespace Employee_Population_Calculator.App.Models
 {
     public enum CoordinateSource
     {

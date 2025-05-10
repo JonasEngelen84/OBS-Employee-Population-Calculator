@@ -1,9 +1,9 @@
-﻿using Employee_Population_Calculator.Services.API;
+﻿using Employee_Population_Calculator.App.Services.API;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Employee_Population_Calculator.Services.Configuration
+namespace Employee_Population_Calculator.App.Services.Configuration
 {
     public class ConfigurationEmployeeAddressesProvider : IEmployeeAddressesProvider
     {

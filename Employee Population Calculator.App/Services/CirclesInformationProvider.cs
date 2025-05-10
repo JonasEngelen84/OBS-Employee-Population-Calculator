@@ -1,11 +1,11 @@
-﻿using Employee_Population_Calculator.Models;
-using Employee_Population_Calculator.Services.API;
+﻿using Employee_Population_Calculator.App.Models;
+using Employee_Population_Calculator.App.Services.API;
 using Geolocation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Employee_Population_Calculator.Services
+namespace Employee_Population_Calculator.App.Services
 {
     public class CirclesInformationProvider : ICirclesInformationProvider
     {

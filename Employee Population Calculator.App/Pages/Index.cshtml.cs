@@ -1,12 +1,12 @@
-﻿using Employee_Population_Calculator.Models;
-using Employee_Population_Calculator.Services.API;
+﻿using Employee_Population_Calculator.App.Models;
+using Employee_Population_Calculator.App.Services.API;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Globalization;
 
 //C# basierter Code mit Bezug auf den HTML Code
-namespace Employee_Population_Calculator.Pages
+namespace Employee_Population_Calculator.App.Pages
 {
     //Beeinhaltet die Daten für die Index-Seite
     public partial class IndexModel : PageModel

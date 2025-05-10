@@ -1,8 +1,8 @@
-﻿using Employee_Population_Calculator.Services.API;
+﻿using Employee_Population_Calculator.App.Services.API;
 using Geolocation;
 using Microsoft.Extensions.Configuration;
 
-namespace Employee_Population_Calculator.Services.Configuration
+namespace Employee_Population_Calculator.App.Services.Configuration
 {
     public class ConfigurationCompanyInformationProvider : ICompanyInformationProvider
     {   

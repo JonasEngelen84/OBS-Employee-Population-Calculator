@@ -1,10 +1,10 @@
-﻿using Employee_Population_Calculator.Services.API;
+﻿using Employee_Population_Calculator.App.Services.API;
 using OBS.Stamm.Client.Api;
 using OBS.Stamm.Client.Model;
 using System;
 using System.Collections.Generic;
 
-namespace Employee_Population_Calculator.Services
+namespace Employee_Population_Calculator.App.Services
 {
     public class EmployeeObsStammAddressesProvider : IEmployeeAddressesProvider
     {

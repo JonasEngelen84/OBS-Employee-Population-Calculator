@@ -1,10 +1,10 @@
-﻿using Employee_Population_Calculator.Services.API;
+﻿using Employee_Population_Calculator.App.Services.API;
 using Geolocation;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 
-namespace OBS.Dashboard.Map.Services
+namespace Employee_Population_Calculator.App.Services
 {
     public class NominatimEmployeeCoordinateProvider : IEmployeeCoordinatesProvider
     {

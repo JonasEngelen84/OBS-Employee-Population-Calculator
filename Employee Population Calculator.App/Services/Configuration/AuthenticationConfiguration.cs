@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Employee_Population_Calculator.Services.Configuration
+namespace Employee_Population_Calculator.App.Services.Configuration
 {
     // Klasse zur Bereitstellung der benötigten Informationen für OAuth 2
     public class AuthenticationConfiguration

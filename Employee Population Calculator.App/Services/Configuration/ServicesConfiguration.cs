@@ -1,4 +1,4 @@
-﻿namespace Employee_Population_Calculator.Configuration
+﻿namespace Employee_Population_Calculator.App.Services.Configuration
 {
     // Klasse zur Deklaration der ServiceConfiguration Instanzen.
     public class ServicesConfiguration
