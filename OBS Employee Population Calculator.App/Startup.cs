@@ -56,10 +56,10 @@ namespace OBS_Employee_Population_Calculator.App
 
             // Zwei Implementierungen für IEmployeeAddressesProvider.
             // - ConfigurationEmployeeAddressesProvider: liest Adressen aus appsettings.json
-            // - EmployeeObsStammAddressesProvider: liest Adressen aus OBS.Stamm.
+            // - ObsStammEmployeeAddressesProvider: liest Adressen aus OBS.Stamm.
             // Wichtig: Bei mehrfacher Registrierung wird im Standard nur die letzte aufgelöst.
             services.AddTransient<IEmployeeAddressesProvider, ConfigurationEmployeeAddressesProvider>();
-            services.AddTransient<IEmployeeAddressesProvider, EmployeeObsStammAddressesProvider>();
+            services.AddTransient<IEmployeeAddressesProvider, ObsStammEmployeeAddressesProvider>();
 
             // Laden der Service- & Auth-Konfigurationen aus appsettings.OBS.Configuration.json
             services.Configure<ServicesConfiguration>(configuration.GetSection("Services"));
@@ -113,7 +113,7 @@ namespace OBS_Employee_Population_Calculator.App
             if (configuration.GetValue<EmployeeAddressesSource>("EmployeeAddressesSource") == EmployeeAddressesSource.OBSStamm)
             {
                 // OBSStamm
-                services.AddTransient<IEmployeeAddressesProvider, EmployeeObsStammAddressesProvider>();
+                services.AddTransient<IEmployeeAddressesProvider, ObsStammEmployeeAddressesProvider>();
             }
             else
             {

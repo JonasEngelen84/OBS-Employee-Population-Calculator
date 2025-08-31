@@ -15,13 +15,13 @@ namespace OBS_Employee_Population_Calculator.App.Services
     /// 
     /// Ergebnisse werden aus Performance-Gründen für 1 Stunde gecached.
     /// </summary>
-    public class EmployeeObsStammAddressesProvider : IEmployeeAddressesProvider
+    public class ObsStammEmployeeAddressesProvider : IEmployeeAddressesProvider
     {
         private readonly IPersonsApi _api; //API-Schnittstelle zum OBS-Personensystem.
         private DateTime _lastCalculationTime = DateTime.Now; // Zeitpunkt der letzten Berechnung, steuert die Cache-Gültigkeit (1 Stunde).
         private List<string> _employeeAddressesCache = null; // Cache für die zuletzt abgerufenen Mitarbeiteradressen.
 
-        public EmployeeObsStammAddressesProvider(IPersonsApi api)
+        public ObsStammEmployeeAddressesProvider(IPersonsApi api)
         {
             _api = api;
         }
