@@ -110,7 +110,7 @@ namespace OBS_Employee_Population_Calculator.App
 
             // Konfiguration des EmployeeAddressesProvider basierend auf appsettings.json
             // Schlüsselwörter sind duch das enum EmployeeAddressesSource festgelegt.
-            if (configuration.GetValue<EmployeeAddressesSource>("EmployeeAddressesSource") == EmployeeAddressesSource.OBSStamm)
+            if (configuration.GetValue<EmployeeAddressesSource>("EmployeeAddressesSource") == EmployeeAddressesSource.ObsStamm)
             {
                 // OBSStamm
                 services.AddTransient<IEmployeeAddressesProvider, ObsStammEmployeeAddressesProvider>();

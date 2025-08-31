@@ -11,6 +11,6 @@
     public enum EmployeeAddressesSource
     {
         Configuration, //appsettings
-        OBSStamm
+        ObsStamm
     }
 }
