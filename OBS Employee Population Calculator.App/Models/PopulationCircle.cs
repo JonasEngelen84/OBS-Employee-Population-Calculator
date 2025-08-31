@@ -1,5 +1,9 @@
 ﻿namespace OBS_Employee_Population_Calculator.App.Models
-{ 
+{
+    /// <summary>
+    /// Repräsentiert einen Kreis auf der Karte, der die "Bevölkerungsdichte" visualisiert.
+    /// Wird an die Visualisierungsebene im Frontend (Leaflet.js) weitergegeben.
+    /// </summary>
     public class PopulationCircle
     {   
         private readonly string color;

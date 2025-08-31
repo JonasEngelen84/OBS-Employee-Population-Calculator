@@ -3,6 +3,14 @@ using System.Collections.Generic;
 
 namespace OBS_Employee_Population_Calculator.App.Services.API
 {
+    /// <summary>
+    /// SOLID-Relevanz:
+    ///  - SRP: Das Interface stellt lediglich die Konfiguration bereit, aus der später die eigentlichen Kreise berechnet werden.
+    ///  - OCP: Später können unterschiedliche Implementierungen hinzugefügt werden. Die Implementierungen, die das Interface konsumiert, bleibt unverändert.
+    ///  - LSP: Jede Implementierung des Interfaces kann überall dort eingesetzt werden, wo die Erwartungen des Clients nicht verletzt werden.
+    ///  - ISP: Das Interface ist spezifisch und stellt nur die benötigten Methoden bereit.
+    ///  - DIP: Abstraktionen (Interfaces) werden bevorzugt gegenüber konkreten Implementierungen.
+    /// </summary>
     public interface ICirclesPropertyProvider
     {
         List<PopulationCircleConfiguration> Configurations { get; }        

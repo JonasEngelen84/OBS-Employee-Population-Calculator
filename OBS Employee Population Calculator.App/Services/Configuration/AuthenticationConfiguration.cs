@@ -2,7 +2,10 @@
 
 namespace OBS_Employee_Population_Calculator.App.Services.Configuration
 {
-    // Klasse zur Bereitstellung der benötigten Informationen für OAuth 2
+    /// <summary>
+    /// Diese Klasse dient als Data Transfer Object (DTO) und wird aus appsettings.json gebunden.
+    /// Sie Enthält die notwendigen Zugangsdaten, um den OAuth2/OpenID-Flow zu realisieren.
+    /// </summary>
     public class AuthenticationConfiguration
     {
         public string ClientId { get; set; }

@@ -26,24 +26,42 @@ namespace OBS_Employee_Population_Calculator.App
         /// <param name="services">Service Collection für Dependency Injection</param>
         public void ConfigureServices(IServiceCollection services)
         {
+            /// <summary>
+            /// Erstellen einer Konfigurationsinstanz für die Anwendung.
+            /// Die ConfigurationBuilder-Klasse erlaubt es, verschiedene Konfigurationsquellen 
+            /// in einer hierarchischen Reihenfolge zusammenzuführen.
+            /// Die Reihenfolge ist entscheidend: spätere Einträge überschreiben frühere, falls Schlüssel identisch sind.
+            /// </summary>
             var configuration = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile("appsettings.OBS.Configuration.json", optional: true, reloadOnChange: true)
-                .AddEnvironmentVariables()
-                .Build();
 
-            services.AddRazorPages();
+            // Lädt die Standardkonfigurationsdatei "appsettings.json".
+            // - optional: true  ? wenn die Datei fehlt, wird kein Fehler geworfen.
+            // - reloadOnChange: true ? Änderungen an der Datei während der Laufzeit
+            //   werden automatisch erkannt und in die Configuration übernommen.
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            .AddJsonFile("appsettings.OBS.Configuration.json", optional: true, reloadOnChange: true)
+            .AddEnvironmentVariables()
+            .Build();
 
+            services.AddRazorPages(); // Fügt Razor Pages Support hinzu. Ermöglicht die Verwendung von .cshtml-Seiten + PageModel-Backends.
+            services.AddOptions(); // Aktiviert die Options-Pattern-Unterstützung. Macht es möglich, Konfigurationen typsicher via IOptions<T> zu binden.
+            services.AddSingleton<HttpClient>(); // Registrierung eines HttpClient (Singleton, da ressourcenintensiv im Aufbau).
+
+            // Alle Transient ? jeweils neue Instanz pro Request/Injection.
+            // Das hält die Services leichtgewichtig und ohne Zustandsprobleme.
+            services.AddTransient<AuthenticationService>();
             services.AddTransient<ICompanyInformationProvider, ConfigurationCompanyInformationProvider>();
             services.AddTransient<ICirclesInformationProvider, CirclesInformationProvider>();
             services.AddTransient<ICirclesPropertyProvider, ConfigurationCirclesPropertyProvider>();
+
+            // Zwei Implementierungen für IEmployeeAddressesProvider.
+            // - ConfigurationEmployeeAddressesProvider: liest Adressen aus appsettings.json
+            // - EmployeeObsStammAddressesProvider: liest Adressen aus OBS.Stamm.
+            // Wichtig: Bei mehrfacher Registrierung wird im Standard nur die letzte aufgelöst.
             services.AddTransient<IEmployeeAddressesProvider, ConfigurationEmployeeAddressesProvider>();
             services.AddTransient<IEmployeeAddressesProvider, EmployeeObsStammAddressesProvider>();
-            services.AddSingleton<HttpClient>();
-            services.AddOptions();
-            services.AddTransient<AuthenticationService>();
 
-            // Laden der Konfigurationen aus appsettings.json
+            // Laden der Service- & Auth-Konfigurationen aus appsettings.OBS.Configuration.json
             services.Configure<ServicesConfiguration>(configuration.GetSection("Services"));
             services.Configure<AuthenticationConfiguration>(configuration.GetSection("Authentication"));
 
@@ -78,6 +96,7 @@ namespace OBS_Employee_Population_Calculator.App
             });
 
             // Konfiguration des EmployeeCoordinatesProvider basierend auf appsettings.json
+            // Schlüsselwörter sind duch das enum CoordinateSource festgelegt.
             if (configuration.GetValue<CoordinateSource>("CoordinateSource") == CoordinateSource.Nominatim)
             {
                 // Nominatim
@@ -85,11 +104,12 @@ namespace OBS_Employee_Population_Calculator.App
             }
             else
             {
-                // appsettings.json
+                // appsettings
                 services.AddTransient<IEmployeeCoordinatesProvider, ConfigurationEmployeeCoordinatesProvider>();
             }
 
             // Konfiguration des EmployeeAddressesProvider basierend auf appsettings.json
+            // Schlüsselwörter sind duch das enum EmployeeAddressesSource festgelegt.
             if (configuration.GetValue<EmployeeAddressesSource>("EmployeeAddressesSource") == EmployeeAddressesSource.OBSStamm)
             {
                 // OBSStamm
@@ -97,7 +117,7 @@ namespace OBS_Employee_Population_Calculator.App
             }
             else
             {
-                // appsettings.json
+                // appsettings
                 services.AddTransient<IEmployeeAddressesProvider, ConfigurationEmployeeAddressesProvider>();
             }
         }
